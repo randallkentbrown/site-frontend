@@ -1,5 +1,6 @@
 .site-frame {
     flex: 1 1 100px;
+    height: 100%;
     background-color: #ffffff;
     word-wrap: break-word;
     padding: 25px;
