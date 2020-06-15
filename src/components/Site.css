@@ -1,0 +1,19 @@
+.site {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  background-color: #ffa444;
+  height: 100%; width: 100%;
+}
+
+.site-row {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  overflow: auto;
+}
+
+.site-padding {
+  flex: 0 0 50px;
+  overflow: auto;
+}

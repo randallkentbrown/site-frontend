@@ -1,0 +1,7 @@
+.site-frame {
+    flex: 1 1 100px;
+    background-color: #ffffff;
+    word-wrap: break-word;
+    padding: 25px;
+    overflow: auto;
+}
