@@ -1,3 +1,6 @@
+# site-frontend
+Frontend for my personal site. Built with React. Deployed using AWS Amplify.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
