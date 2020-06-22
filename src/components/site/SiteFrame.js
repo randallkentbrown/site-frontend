@@ -12,7 +12,6 @@ class SiteFrame extends React.Component {
     }
 
     componentDidMount() {
-        console.log(data);
         this.setState(data);
     }
 
