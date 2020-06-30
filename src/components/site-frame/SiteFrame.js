@@ -1,6 +1,7 @@
 import React from 'react';
 import data from '../../data/DummySiteData.js';
 import './SiteFrame.css';
+import PageView from '../page-view/PageView.js';
 
 class SiteFrame extends React.Component {
 
@@ -18,7 +19,7 @@ class SiteFrame extends React.Component {
     render() {
         return (
             <div className="site-frame">
-                {this.state.text}
+                <PageView/>
             </div>
         );
     }
