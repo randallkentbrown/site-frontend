@@ -20,7 +20,7 @@ class PageSelector extends React.Component {
 
     createButton(number, title, icon) {
         return (
-            <div onClick={() => this.props.switcher(number)}>
+            <div className="page-button" onClick={() => this.props.switcher(number)}>
                 {title}
             </div>
         );
@@ -34,8 +34,10 @@ class PageSelector extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="button-container">
+                <div className="page-button-padding"/>
                 {this.buttons()}
+                <div className="page-button-padding"/>
             </div>
         );
     }
