@@ -1,5 +1,5 @@
 import React from 'react';
-import { getPages } from '../../service/pages.js';
+import getPages from '../../service/pages.js';
 import './SiteFrame.css';
 import PageView from '../page-view/PageView.js';
 

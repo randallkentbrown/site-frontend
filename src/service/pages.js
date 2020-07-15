@@ -8,4 +8,4 @@ const getPages = async () => {
     return axios.get(route).then(res => res.data);
 };
 
-exports.getPages = getPages;
+export default getPages;
