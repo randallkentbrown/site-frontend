@@ -9,4 +9,3 @@ const getPages = async () => {
 };
 
 exports.getPages = getPages;
-exports.default = exports.getPages;
