@@ -1,7 +1,6 @@
 import React from 'react';
 import './PageView.css';
 import PageSelector from '../page-selector/PageSelector.js';
-import data from '../../data/DummySiteData.js';
 
 class PageView extends React.Component {
 
@@ -9,7 +8,7 @@ class PageView extends React.Component {
         super();
         this.state = {
             page: 1,
-            pages: data
+            pages: []
         }
     }
 
@@ -19,11 +18,26 @@ class PageView extends React.Component {
         });
     }
 
+    componentDidMount() {
+        this.setState({
+            pages: this.props.pages
+        });
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.pages !== prevProps.pages) {
+            this.setState({
+                pages: this.props.pages
+            });
+        }
+    }
+
     render() {
         const page = this.state.page;
-        console.log(page);
-        const currentPage = this.state.pages[page - 1];
-        console.log(currentPage);
+        var currentPage = this.state.pages[page - 1];
+        if (currentPage === undefined) {
+            currentPage = { number: 1, title: "None" }
+        }
         return (
             <div className="page-view">
                 <PageSelector switcher={this.switchToPage.bind(this)} pages={this.state.pages}/>

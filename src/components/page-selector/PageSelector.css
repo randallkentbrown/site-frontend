@@ -1,5 +1,6 @@
 :root {
-    --underline-color: #787860;
+    --underline-color: #E0E0C0;
+    --button-color: #E8E8D0;
 }
 
 .button-container {
@@ -15,5 +16,9 @@
 .page-button {
     margin: 0% 2.5%;
     align-content: center;
-    border-bottom: 3px solid var(--underline-color);
+    padding: 2px;
+    background-color: var(--button-color);
+    border: 1.5px solid var(--underline-color);
+    user-select: none;
+    cursor: pointer;
 }
