@@ -1,6 +1,8 @@
 import React from 'react';
 import './PageView.css';
 import PageSelector from '../page-selector/PageSelector.js';
+import About from './../pages/about/About.js';
+import Construction from './../pages/construction/Construction.js';
 
 class PageView extends React.Component {
 
@@ -32,17 +34,23 @@ class PageView extends React.Component {
         }
     }
 
-    render() {
+    choosePage() {
         const page = this.state.page;
         var currentPage = this.state.pages[page - 1];
-        if (currentPage === undefined) {
-            currentPage = { number: 1, title: "None" }
+        if (currentPage !== undefined && currentPage.title === "about") {
+            return <About data={currentPage.data}/>;
+        } else {
+            return <Construction/>;
         }
+    }
+
+    render() {
         return (
             <div className="page-view">
                 <PageSelector switcher={this.switchToPage.bind(this)} pages={this.state.pages}/>
-                <div className="view-number">Page {currentPage.number}</div>
-                <div className="view-title">* {currentPage.title} *</div>
+                <div className="page-viewport">
+                    {this.choosePage()}
+                </div>
             </div>
         );
     }
