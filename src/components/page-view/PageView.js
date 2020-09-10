@@ -43,15 +43,11 @@ class PageView extends React.Component {
         if (this.state.loaded === false) {
                 return <Loading/>;
         } else if (currentPage !== undefined) {
-            console.log("original currentpage");
-            console.log(currentPage);
             return this.choosePage(currentPage);
         }
     }
 
     choosePage(currentPage) {
-        console.log("Current Page: ");
-        console.log(currentPage);
         if (currentPage.title === "about") {
             return <About data={currentPage.data}/>;
         } else {
