@@ -6,6 +6,7 @@ class PageSelector extends React.Component {
     constructor(props) {
         super();
         this.state = {
+            selected: 1,
             pages: props.pages
         }
     }
@@ -18,9 +19,16 @@ class PageSelector extends React.Component {
         }
     }
 
+    switcher(number) {
+        this.setState({
+            selected: number
+        });
+        this.props.switcher(number);
+    }
+
     createButton(number, title, icon) {
         return (
-            <div key={number} className="page-button" onClick={() => this.props.switcher(number)}>
+            <div key={number} className={number === this.state.selected ? "page-button-selected" :"page-button"} onClick={() => {this.switcher(number);}}>
                 {title}
             </div>
         );
