@@ -23,11 +23,25 @@ class About extends React.Component {
         return renderedString;
     }
 
-    render() {
+    aboutText() {
         const data = this.state.data;
+        let pageString = "";
+        let lines = [
+            `You've found ${data.name}'s personal site!`,
+            `I'm a fifth-year Software Engineering undergrad at Rochester Institute of Technology.`,
+            `I'm currently living in the Rochester area with my lovely roommates, planning to start my final semester in the spring.`,
+            `I spend my time ${this.renderKeys(data.hobbies)}, though none particularly well.`
+        ]
+        lines.forEach(line => {
+            pageString = pageString + line + `\r\n`;
+        });
+        return pageString.trim();
+    }
+
+    render() {
         return (
             <div className="about-container">
-                You found {data.sName}'s personal site! {data.name} is a fifth-year Software Engineering undergraduate at the Rochester Institute of Technology. {data.sName} currently lives in {data.basedIn} with his lovely roommates. His hobbies include {this.renderKeys(data.hobbies)}, though he's not particularly good at any of them.
+                {this.aboutText()}
             </div>
         );
     }

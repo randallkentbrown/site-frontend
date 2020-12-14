@@ -1,5 +1,6 @@
 :root {
-    --underline-color: #D0D0B4;
+    --hovered-underline-color: #cecec0;
+    --selected-underline-color: #e98b3f;
 }
 
 .button-container {
@@ -23,6 +24,10 @@
     cursor: pointer;
 }
 
+.page-button:hover {
+    border-bottom: 2px solid var(--hovered-underline-color);
+}
+
 .page-button-selected {
     margin-left: 2.5%;
     margin-right: 2.5%;
@@ -32,5 +37,5 @@
     padding: 2px;
     user-select: none;
     cursor: pointer;
-    border-bottom: 2px solid #e98b3f;
+    border-bottom: 2px solid var(--selected-underline-color);
 }
