@@ -60,8 +60,9 @@ class PageView extends React.Component {
 
     render() {
         return (
-            <div className="page-view">
+            <div className="page-view buffered">
                 <PageSelector switcher={this.switchToPage.bind(this)} pages={this.state.pages}/>
+                <div className="view-divider buffered"></div>
                 <div className="page-viewport">
                     {this.pageScaffold()}
                 </div>
