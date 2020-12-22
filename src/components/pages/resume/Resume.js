@@ -1,6 +1,7 @@
 import React from 'react';
 import './Resume.css';
 import ResumeButton from './resume-components/ResumeButton.js';
+import { connect } from "react-redux";
 
 class Resume extends React.Component {
 
@@ -27,10 +28,9 @@ class Resume extends React.Component {
 
     render() {
         const text = `Click here to download Kent's official, well-manicured, information-dense resume!`;
-        const link = `https://rkb-resume-bucket.s3.amazonaws.com/randallkentbrown-resume-current.pdf`;
         return (
             <div className="resume-container">
-                <ResumeButton text={text} link={link}></ResumeButton>
+                <ResumeButton text={text} link={this.props.resumeURI}></ResumeButton>
                 <div className="digital-resume-container">
                     {this.resumeText()}
                 </div>
@@ -40,4 +40,9 @@ class Resume extends React.Component {
 
 }
 
-export default Resume;
+const mapStateToProps = state => {
+    const resumeURI = state.resumeURI;
+    return { resumeURI: resumeURI };
+}
+
+export default connect(mapStateToProps)(Resume);

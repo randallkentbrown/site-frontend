@@ -1,7 +1,7 @@
 import React from 'react';
-import './About.css';
+import './Home.css';
 
-class About extends React.Component {
+class Home extends React.Component {
 
     constructor(props) {
         super();
@@ -23,14 +23,14 @@ class About extends React.Component {
         return renderedString;
     }
 
-    aboutText() {
+    text() {
         const data = this.state.data;
         let pageString = "";
         let lines = [
-            `You've found ${data.name}'s personal site!`,
+            `Hey there! I'm ${data.name}. Welcome to my personal site!`,
             `I'm a fifth-year Software Engineering undergrad at Rochester Institute of Technology.`,
             `I'm currently living in the Rochester area with my lovely roommates, planning to start my final semester in the spring.`,
-            `I spend my time ${this.renderKeys(data.hobbies)}, though none particularly well.`
+            `I spend my free time ${this.renderKeys(data.hobbies)}, in no particular order.`
         ]
         lines.forEach(line => {
             pageString = pageString + line + `\r\n`;
@@ -40,12 +40,12 @@ class About extends React.Component {
 
     render() {
         return (
-            <div className="about-container">
-                {this.aboutText()}
+            <div className="home-container">
+                {this.text()}
             </div>
         );
     }
 
 }
 
-export default About;
+export default Home;

@@ -3,7 +3,7 @@ import './PageView.css';
 import PageSelector from '../page-selector/PageSelector.js';
 import Loading from './../pages/loading/Loading.js'
 import Construction from './../pages/construction/Construction.js';
-import About from './../pages/about/About.js';
+import Home from '../pages/home/Home.js';
 import Resume from './../pages/resume/Resume.js';
 
 class PageView extends React.Component {
@@ -49,8 +49,8 @@ class PageView extends React.Component {
     }
 
     choosePage(currentPage) {
-        if (currentPage.title === "about") {
-            return <About data={currentPage.data}/>;
+        if (currentPage.title === "home") {
+            return <Home data={currentPage.data}/>;
         } else if (currentPage.title === "resume") {
             return <Resume data={currentPage.data}/>;
         } else {
