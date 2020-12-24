@@ -1,5 +1,7 @@
 import React from 'react';
 import './Home.css';
+import text from '../../../util.js';
+import homeText from './HomeText.js';
 
 class Home extends React.Component {
 
@@ -10,7 +12,7 @@ class Home extends React.Component {
         }
     }
 
-    renderKeys(obj) {
+    renderHobbies(obj) {
         const values = Object.values(obj);
         let renderedString = values[0].toString();
         values.forEach(value => {
@@ -23,25 +25,13 @@ class Home extends React.Component {
         return renderedString;
     }
 
-    text() {
-        const data = this.state.data;
-        let pageString = "";
-        let lines = [
-            `Hey there! I'm ${data.name}. Welcome to my personal site!`,
-            `I'm a fifth-year Software Engineering undergrad at Rochester Institute of Technology.`,
-            `I'm currently living in the Rochester area with my lovely roommates, planning to start my final semester in the spring.`,
-            `I spend my free time ${this.renderKeys(data.hobbies)}, in no particular order.`
-        ]
-        lines.forEach(line => {
-            pageString = pageString + line + `\r\n`;
-        });
-        return pageString.trim();
-    }
-
     render() {
         return (
             <div className="home-container">
-                {this.text()}
+                {text(homeText({
+                    ...this.state.data,
+                    hobbies: this.renderHobbies(this.state.data.hobbies)
+                }))}
             </div>
         );
     }
