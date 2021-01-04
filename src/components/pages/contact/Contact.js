@@ -2,6 +2,7 @@ import React from 'react';
 import './Contact.css';
 import text from '../../../util.js';
 import contactText from './ContactText.js';
+import ContactItem from './components/ContactItem.js';
 
 class Contact extends React.Component {
 
@@ -36,14 +37,18 @@ class Contact extends React.Component {
         return (
             <div className="contact-container">
                 <div className="contact-text-container">
-                    {text(contactText)}
+                    {text(contactText[0])}
                 </div>
                 <br></br>
                 <div className="contact-elements-container">
-                    <div className="contact-info contact-email">email: {email}</div>
-                    <div className="contact-info contact-cell">cell: {cell}</div>
-                    <div className="contact-info contact-linkedin">linkedIn: <a href={this.fullLinkedIn(linkedIn)}>/in/{linkedIn}</a></div>
-                    <div className="contact-info contact-github">github: <a href={this.fullGitHub(github)}>{github}</a></div>
+                    <ContactItem type="email" text={email}></ContactItem>
+                    <ContactItem type="cell" text={cell}></ContactItem>
+                    <ContactItem type="linkedIn" text={"/in/" + linkedIn} href={this.fullLinkedIn(linkedIn)}></ContactItem>
+                    <ContactItem type="github" text={github} href={this.fullGitHub(github)}></ContactItem>
+                </div>
+                <br></br>
+                <div className="contact-text-container">
+                    {text(contactText[1])}
                 </div>
             </div>
         );

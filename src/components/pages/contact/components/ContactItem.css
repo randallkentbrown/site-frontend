@@ -1,0 +1,20 @@
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.contact-buffer {
+    flex: 0 0 1%;
+}
+
+.contact-type {
+    text-align: right;
+    flex: 1 1 0%;
+    font-weight: 500;
+}
+
+.contact-text {
+    text-align: left;
+    flex: 1 1 100px;
+}
