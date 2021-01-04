@@ -27,7 +27,13 @@ class ContactItem extends React.Component {
 
     contactText() {
         if (this.state.href !== undefined) {
-            return <a className="contact-text" href={this.state.href}>{this.state.text}</a>
+            return (
+                <div className="contact-text">
+                    <a className="contact-link" href={this.state.href}>
+                        {this.state.text}
+                    </a>
+                </div>
+            );
         } else {
             return <div className="contact-text">{this.state.text}</div>
         }

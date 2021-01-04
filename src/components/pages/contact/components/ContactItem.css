@@ -18,3 +18,8 @@
     text-align: left;
     flex: 1 1 100px;
 }
+
+.contact-link {
+    color: lightseagreen;
+    text-decoration: underline;
+}
