@@ -6,7 +6,7 @@ class PageSelector extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            selected: 1,
+            selected: 0,
             pages: props.pages
         }
     }

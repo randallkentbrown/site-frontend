@@ -12,7 +12,7 @@ class PageView extends React.Component {
     constructor() { 
         super();
         this.state = {
-            page: 1,
+            page: 0,
             pages: [ ],
             loaded: false
         }
@@ -41,7 +41,7 @@ class PageView extends React.Component {
 
     pageScaffold() {
         const page = this.state.page;
-        var currentPage = this.state.pages[page - 1];
+        var currentPage = this.state.pages[page];
         if (this.state.loaded === false) {
                 return <Loading/>;
         } else if (currentPage !== undefined) {
