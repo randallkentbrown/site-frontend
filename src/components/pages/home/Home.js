@@ -12,6 +12,14 @@ class Home extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.data !== prevProps.data) {
+            this.setState({
+                data: this.props.data
+            });
+        }
+    }
+
     renderHobbies(obj) {
         const values = Object.values(obj);
         let renderedString = values[0].toString();

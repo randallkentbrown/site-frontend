@@ -19,8 +19,6 @@ class PageSelector extends React.Component {
         }
     }
 
-
-
     switcher(number) {
         this.setState({
             selected: number
@@ -37,17 +35,8 @@ class PageSelector extends React.Component {
     }
 
     buttons() {
-        const reducer = (visibleButtons, pageData) => {
-            if (pageData.visible) {
-                visibleButtons.push(pageData);
-            }
-            return visibleButtons;
-        };
-        const trueButtons = [];
-        this.state.pages.reduce(reducer, trueButtons);
-
-        return trueButtons.map(page => {
-            return this.createButton(page.number, page.title, null);
+        return this.state.pages.map((page, pageIdx) => {
+            return this.createButton(pageIdx, page.title, null);
         });
     }
 

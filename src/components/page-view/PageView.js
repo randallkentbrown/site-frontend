@@ -5,6 +5,7 @@ import Loading from './../pages/loading/Loading.js'
 import Construction from './../pages/construction/Construction.js';
 import Home from '../pages/home/Home.js';
 import Resume from './../pages/resume/Resume.js';
+import Contact from './../pages/contact/Contact.js';
 
 class PageView extends React.Component {
 
@@ -53,6 +54,8 @@ class PageView extends React.Component {
             return <Home data={currentPage.data}/>;
         } else if (currentPage.title === "resume") {
             return <Resume data={currentPage.data}/>;
+        } else if (currentPage.title === "contact") {
+            return <Contact data={currentPage.data}/>
         } else {
             return <Construction/>;
         }
