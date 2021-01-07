@@ -9,3 +9,8 @@
     word-wrap: break-word;
     overflow: auto;
 }
+
+.site-bar {
+    color: paleturquoise;
+    width: 100px;
+}

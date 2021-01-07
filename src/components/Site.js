@@ -13,7 +13,11 @@ class Site extends React.Component {
 
   render() {
     return (
-      <SiteFrame/>
+      <div className="site">
+        <div className="site-padding"></div>
+        <SiteFrame/>
+        <div className="site-padding"></div>
+      </div>
     );
   }
 }

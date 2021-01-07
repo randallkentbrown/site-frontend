@@ -1,6 +1,6 @@
 .site {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: stretch;
   background-color: #ffffff;
   height: 100%; width: 100%;
@@ -18,4 +18,5 @@
 .site-padding {
   flex: 0 0 50px;
   overflow: auto;
+  background-color: lightseagreen;
 }
