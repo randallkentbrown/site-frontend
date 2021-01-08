@@ -3,14 +3,10 @@
 }
 
 .site-frame {
-    flex: 1 1 100px;
+    flex: 1 1 50%;
+    min-width: 500px;
     height: 100%;
     background-color: var(--site-background-color);
     word-wrap: break-word;
     overflow: auto;
-}
-
-.site-bar {
-    color: paleturquoise;
-    width: 100px;
 }

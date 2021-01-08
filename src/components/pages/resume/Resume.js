@@ -20,8 +20,7 @@ class Resume extends React.Component {
                 <div className="digital-resume-container">
                     {text(resumeText)}
                 </div>
-                <br/>
-                <ResumeButton text={`Click here to download Kent's official, well-manicured, information-dense resume!`} link={this.props.resumeURI}></ResumeButton>
+                <ResumeButton text={`Click here to download Kent's current resume!`} link={this.props.resumeURI}></ResumeButton>
             </div>
         );
     }
