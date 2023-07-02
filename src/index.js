@@ -1,12 +1,12 @@
 import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./styles.css";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 import LightweightSite from "./new-components/LightweightSite";
 
-const root = createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <StrictMode>
     <LightweightSite />
-  </StrictMode>
+  </StrictMode>,
+  document.getElementById("root")
 );

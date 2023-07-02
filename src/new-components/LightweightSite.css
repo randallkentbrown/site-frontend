@@ -1,19 +1,20 @@
-._site {
-    background-color: whitesmoke;
-    margin: 2%;
-}
-
-._background {
-    width: 100%;
+._site 
+{
+    box-sizing: border-box;
     height: 100%;
-    align-items: center;
-    background-color: chocolate;
+    border: 5px solid #f5a144;
+    background-color: white;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-._fullWidth {
-    width: 100%;
+._headingContainer {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
-._fullHeight {
-    height: 100%;
+._heading
+{
+    margin: 0;
 }
