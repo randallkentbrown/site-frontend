@@ -1,24 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Site from './components/Site';
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./styles.css";
 
-/*
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <Site/>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-*/
+import LightweightSite from "./new-components/LightweightSite";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Site/>
-  </React.StrictMode>,
-  document.getElementById('root')
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <StrictMode>
+    <LightweightSite />
+  </StrictMode>
 );

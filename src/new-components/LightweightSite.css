@@ -1,0 +1,19 @@
+._site {
+    background-color: whitesmoke;
+    margin: 2%;
+}
+
+._background {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-color: chocolate;
+}
+
+._fullWidth {
+    width: 100%;
+}
+
+._fullHeight {
+    height: 100%;
+}
