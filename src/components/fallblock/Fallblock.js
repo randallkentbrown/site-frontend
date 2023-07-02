@@ -6,15 +6,15 @@ class Fallblock extends React.Component {
   /* Props:
    * page - a page (.id, .title, .shortTitle)
    */
-  constructor() {
+  constructor(props) {
     super();
-    const page = this.props.page;
-    const text = this.props.text;
+    const page = props.page;
+    const text = props.text;
     let id = 0;
     this.state = {
       id: page.id || id++,
-      title: page || "Untitled",
-      shortTitle: page || "N/A",
+      title: page.tite || "Untitled",
+      shortTitle: page.shortTitle || "N/A",
       text: text || "[REDACTED]",
     }
   };

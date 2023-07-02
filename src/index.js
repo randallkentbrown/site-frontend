@@ -5,11 +5,20 @@ import Site from './components/Site';
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+/*
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Site/>
     </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+*/
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Site/>
   </React.StrictMode>,
   document.getElementById('root')
 );

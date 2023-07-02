@@ -6,4 +6,4 @@ const text = (lines) => {
     return textString.trim();
 };
 
-export default text;
+exports.text = text;

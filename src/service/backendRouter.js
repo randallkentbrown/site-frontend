@@ -6,10 +6,15 @@ const router = {
     },
 }
 
-const getRoot = (route) => {
+// Returns the full address of a route; i.e. given route appended to the designated router address
+const routeFullAddress = (route) => {
     const root = router.local ? router.urls.local : router.urls.online;
     return `${root}${route}`;
 };
 
-exports.setLocal = (local) => { router.local = local; }
-exports.router = getRoot;
+// method to set the router 
+const setLocal = (local) => { router.local = local; }
+
+// Exports a function to set whether the 
+exports.setLocal = setLocal;
+exports.router = routeFullAddress;
