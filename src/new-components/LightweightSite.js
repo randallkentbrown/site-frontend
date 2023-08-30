@@ -15,9 +15,9 @@ export default function LightweightSite() {
 };
 
 const Header = () => {
-    return <div className="_headingContainer">
-        <h1 className="_heading">Randall Kent Brown Jr.</h1>
-        <h2 className="_heading">Madison, WI</h2>
+    return <div className="_headerContainer">
+        <h1 className="_header">Randall Kent Brown Jr.</h1>
+        <h2 className="_headerRight">Madison, WI</h2>
     </div>;
 };
 
@@ -27,13 +27,16 @@ const Toolbar = (props) => {
 
     const personalPageNumber = PAGE_NUMBER_PERSONAL();
     const professionalPageNumber = PAGE_NUMBER_PROFESSIONAL();
+    const contactPageNumber = PAGE_NUMBER_CONTACT();
 
     const switchToPersonalPage = useCallback(() => { setPage(personalPageNumber); }, [setPage, personalPageNumber]);
     const switchToProfessionalPage = useCallback(() => { setPage(professionalPageNumber); }, [setPage, professionalPageNumber]);
+    const switchToContactPage = useCallback(() => { setPage(contactPageNumber); }, [setPage, contactPageNumber]);
 
     return <nav className="_toolbar">
         <button className="_toolbarButton" onClick={switchToPersonalPage}>Personal</button>
         <button className="_toolbarButton" onClick={switchToProfessionalPage}>Professional</button>
+        <button className="_toolbarButton" onClick={switchToContactPage}>Contact</button>
     </nav>
 };
 
@@ -49,6 +52,9 @@ const Page = (props) => {
         case PAGE_NUMBER_PROFESSIONAL():
             content = <ProfessionalPage />;
             break;
+        case PAGE_NUMBER_CONTACT():
+            content = <ContactPage />;
+            break;
         default:
             content = "Hey... how'd you get here?";
             break;
@@ -59,7 +65,7 @@ const Page = (props) => {
   
 const PersonalPage = () => {
     return <>
-        <h3>About Me</h3>
+        <h3 className="_firstHeading">About Me</h3>
         <p>
             Hello, I'm Kent! I'm a software engineer with a passion for education and environmentalism! I currently live in Madison, Wisconsin,
             where I moved after graduating from Rochester Institute of Technology, in Rochester, NY in 2021. I've lived all over the country and
@@ -80,12 +86,10 @@ const PersonalPage = () => {
 
 const ProfessionalPage = () => {
     return <>
-        <h3>Education</h3>
+        <h3 className="_firstHeading">Education</h3>
         <p>
-            I am a Class of 2021 graduate of the Rochester Institute of Technology, with a Bachelor's Degree in Software Engineering!
-        </p>
-        <p>
-            Go Tigers!
+            I hold a Bachelor's of Science, <i>cum laude</i>, in Software Engineering from Rochester Institute of Technology (class of 2021).
+            I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
         </p>
         <h3>Current Position</h3>
         <p>
@@ -116,5 +120,23 @@ const ProfessionalPage = () => {
     </>;
 }
 
+const ContactPage = () => {
+    return <>
+        <h3>Get In Touch</h3>
+        <p>
+            If you have a <i>legitimate</i> reason to contact me, please do! Reach out through these official channels:
+        </p>
+        email: <a href="mailto:randall.k.brown.jr@gmail.com">randall.k.brown.jr@gmail.com</a>
+        <br />
+        linkedin: <a href="https://www.linkedin.com/in/randall-kent-brown">www.linkedin.com/in/randall-kent-brown</a>
+        <h3>Check Out the Site</h3>
+        <p>
+            If you're technically savvy and curious about the site (or just curious), the code is open source! Feel free to check it out on GitHub.
+        </p>
+        repo: <a href="https://github.com/randallkentbrown/site-frontend">github.com/randallkentbrown/site-frontend</a>
+    </>;
+};
+
 const PAGE_NUMBER_PERSONAL = () => 1;
 const PAGE_NUMBER_PROFESSIONAL = () => 2;
+const PAGE_NUMBER_CONTACT = () => 3;

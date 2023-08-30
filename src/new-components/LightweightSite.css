@@ -7,22 +7,33 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+/* Page */
+
 ._page {
     box-sizing: border-box;
     width: 100%;
     padding: 0.5%;
 }
 
-/* Heading */
+._firstHeading {
+    margin-top: 0px;
+}
 
-._headingContainer {
+/* Header */
+
+._headerContainer {
     width: 100%;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
 }
 
-._heading {
+._header {
+    margin: 0;
+}
+
+._headerRight {
+    text-align: right;
     margin: 0;
 }
 
