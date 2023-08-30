@@ -122,7 +122,7 @@ const ProfessionalPage = () => {
 
 const ContactPage = () => {
     return <>
-        <h3>Get In Touch</h3>
+        <h3 className="_firstHeading">Get In Touch</h3>
         <p>
             If you have a <i>legitimate</i> reason to contact me, please do! Reach out through these official channels:
         </p>
