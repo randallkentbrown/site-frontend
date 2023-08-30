@@ -1,20 +1,51 @@
-._site 
-{
-    box-sizing: border-box;
-    height: 100%;
-    border: 5px solid #f5a144;
+._site {
+    min-height: 100%;
     background-color: white;
+    box-sizing: border-box;
+    border: 5px solid #f5a144;
     padding: 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+._page {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5%;
+}
+
+/* Heading */
+
 ._headingContainer {
+    width: 100%;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
 }
 
-._heading
-{
+._heading {
     margin: 0;
+}
+
+/* Toolbar */
+
+._toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+._toolbarButton {
+    flex: 0 0 auto;
+    background-color: transparent;
+    border: 0;
+    margin: 5px 10px;
+    padding: 5px;
+}
+
+._toolbarButton:hover {
+    background-color:lightgrey;
+}
+
+._toolbarButton:active {
+    background-color:darkgrey;
 }
