@@ -1,9 +1,11 @@
 import React, { useState, useCallback } from "react";
 import "./LightweightSite.css";
 
+/* Site */
+
 export default function LightweightSite() {
 
-    const [page, setPage] = useState(PAGE_NUMBER_PERSONAL());
+    const [page, setPage] = useState(PAGE_NUMBERS.personal);
 
     const setPageNumber = (pageNumber) => { setPage(pageNumber); };
 
@@ -14,6 +16,8 @@ export default function LightweightSite() {
     </div>;
 };
 
+/* Header */
+
 const Header = () => {
     return <div className="_headerContainer">
         <h1 className="_header">Randall Kent Brown Jr.</h1>
@@ -21,13 +25,15 @@ const Header = () => {
     </div>;
 };
 
+/* Toolbar */
+
 const Toolbar = (props) => {
 
     const setPage = props.setPage;
 
-    const personalPageNumber = PAGE_NUMBER_PERSONAL();
-    const professionalPageNumber = PAGE_NUMBER_PROFESSIONAL();
-    const contactPageNumber = PAGE_NUMBER_CONTACT();
+    const personalPageNumber = PAGE_NUMBERS.personal;
+    const professionalPageNumber = PAGE_NUMBERS.professional;
+    const contactPageNumber = PAGE_NUMBERS.contact;
 
     const switchToPersonalPage = useCallback(() => { setPage(personalPageNumber); }, [setPage, personalPageNumber]);
     const switchToProfessionalPage = useCallback(() => { setPage(professionalPageNumber); }, [setPage, professionalPageNumber]);
@@ -40,19 +46,21 @@ const Toolbar = (props) => {
     </nav>
 };
 
+/* Pages */
+
 const Page = (props) => {
 
     const page = props.page;
     let content = "";
 
     switch(page) {
-        case PAGE_NUMBER_PERSONAL():
+        case PAGE_NUMBERS.personal:
             content = <PersonalPage />;
             break;
-        case PAGE_NUMBER_PROFESSIONAL():
+        case PAGE_NUMBERS.professional:
             content = <ProfessionalPage />;
             break;
-        case PAGE_NUMBER_CONTACT():
+        case PAGE_NUMBERS.contact:
             content = <ContactPage />;
             break;
         default:
@@ -137,6 +145,10 @@ const ContactPage = () => {
     </>;
 };
 
-const PAGE_NUMBER_PERSONAL = () => 1;
-const PAGE_NUMBER_PROFESSIONAL = () => 2;
-const PAGE_NUMBER_CONTACT = () => 3;
+/* Enums */
+
+const PAGE_NUMBERS = {
+    personal: 1,
+    professional: 2,
+    contact: 3
+};
