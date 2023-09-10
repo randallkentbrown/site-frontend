@@ -141,7 +141,7 @@ const ContactPage = () => {
         <p>
             If you're technically savvy and curious about the site (or just curious), the code is open source! Feel free to check it out on GitHub.
         </p>
-        repo: <a href="https://github.com/randallkentbrown/site-frontend">github.com/randallkentbrown/site-frontend</a>
+        repo: <a href="https://www.github.com/randallkentbrown/site-frontend">www.github.com/randallkentbrown/site-frontend</a>
     </>;
 };
 
