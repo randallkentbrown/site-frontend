@@ -107,7 +107,7 @@ const ProfessionalPage = () => {
     return <>
         <h3 className="_firstHeading">Education</h3>
         <p>
-            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b>.
+            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
             I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
         </p>
 
