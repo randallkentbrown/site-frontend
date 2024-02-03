@@ -85,41 +85,59 @@ const PersonalPage = () => {
         </p>
         <h3>Charlie Brown's Tree Farm</h3>
         <p>
-            My family are the proud owners of a beautiful Christmas Tree Farm in Milford, New Jersey, on the border near Pennsylvania.
+            My family are the proud owners of a beautiful Christmas Tree Farm in Milford, New Jersey, near the Pennsylvania border.
             If you're ever in the area, or just curious about our business, please feel free to visit our site,
-            at <a href="https://charliebrownschristmastreefarm.com/">www.charliebrownschristmastreefarm.com</a>, for more information!
+            at <a href="https://charliebrownschristmastreefarm.com/">www.charliebrownschristmastreefarm.com</a>, for more information,
+            and maybe even come say 'hi'!
         </p>
     </>;
 }
 
+/* A heading with a sub-title displaying a provided string as a date. */
+const DatedHeading = ({children, date}) => {
+    return <h4>
+        {children}
+        <br/>
+        <span className="_headingDate">Dates: {date}</span>
+    </h4>;
+};
+
+/* A page detailing my professional experience. */
 const ProfessionalPage = () => {
     return <>
         <h3 className="_firstHeading">Education</h3>
         <p>
-            I hold a Bachelor's of Science, <i>cum laude</i>, in Software Engineering from Rochester Institute of Technology (class of 2021).
+            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
             I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
         </p>
-        <h3>Current Position</h3>
+
+        <h3>Current Engagements</h3>
+        <DatedHeading date={<>11/2023 - <i>current</i></>}>Blain Supply / Blain's Farm and Fleet</DatedHeading>
         <p>
-            I currently live in Madison, Wisconsin where I am employed by Epic, an industry-leading electronic health records company
-            headquartered in Verona, Wisconsin. At Epic I work in a full-stack development environment, maintaining and extending
-            integrated enterprise applications running a React front-end, C# / .NET back-end, and a legacy M database.
+            Since November of 2023 I have been a Software Developer in the IT Division of Blain's Farm and Fleet, a consumer-focused regional retailer
+            with stores across the Midwest. I contribute full-stack software development with a focus on user-centered design, integration, and agile process management.
         </p>
         <h3>Prior Experience</h3>
-        <h4>Senior Capstone Project - LenelS2 Camera Security Simulator</h4>
+        <DatedHeading date="8/2021 - 10/2023">Epic Systems Corp.</DatedHeading>
         <p>
-            During my year-long Senior Capstone project at RIT, I led a team of four other developers in the enhancement of a
+            I spent two intense and rewarding years at Epic Systems in Verona, WI, where I worked in a full-stack development environment.
+            I was responsible for maintaining and extending integrated enterprise applications running a React front-end,
+            C# / .NET back-end, and a legacy M database.
+        </p>
+        <DatedHeading date="8/2020 - 5/2021">Senior Capstone Project - LenelS2 Security Camera Simulator</DatedHeading>
+        <p>
+            During my year-long Senior Capstone project at RIT, I led a team of four other student developers in the enhancement of a
             security camera simulator tool. Using a Kanban lifecycle with two-week sprints to maintain accountability and progress,
             we extended a legacy camera simulator system by creating a Python API for the system and deploying the tool in a
             container using Docker. In the end, we were able to exceed client expectations with the delivered product.
         </p>
-        <h4>Amplify Education (Co-op)</h4>
+        <DatedHeading date="1/2020 - 5/2020">Amplify Education (Co-Op)</DatedHeading>
         <p>
             At Amplify, I worked as a Test Engineer Co-op, developing automated test cases and performing manual release testing.
             I also assisted developers on my team with the management of AWS resources and occasionally performed minor development
             tasks, such as creating small components and maintaining web services.
         </p>
-        <h4>ENSCO Avionics (Co-op)</h4>
+        <DatedHeading date="7/2018 - 12/2018">ENSCO Avionics (Co-Op)</DatedHeading>
         <p>
             While working with ENSCO Avionics as an Assistant Verification Engineer, I worked in a new team to establish a project
             lifecycle for the safety-critical validation and verification of the dashboard controller in
@@ -139,7 +157,7 @@ const ContactPage = () => {
         linkedin: <a href="https://www.linkedin.com/in/randall-kent-brown">www.linkedin.com/in/randall-kent-brown</a>
         <h3>Check Out the Site</h3>
         <p>
-            If you're technically savvy and curious about the site (or just curious), the code is open source! Feel free to check it out on GitHub.
+            If you're curious about the code behind the site, you're in luck: I've made the code open source! Feel free to check it out on GitHub.
         </p>
         repo: <a href="https://www.github.com/randallkentbrown/site-frontend">www.github.com/randallkentbrown/site-frontend</a>
     </>;

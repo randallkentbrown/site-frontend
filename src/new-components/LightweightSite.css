@@ -19,6 +19,10 @@
     margin-top: 0px;
 }
 
+._headingDate {
+    font-weight: normal;
+}
+
 /* Header */
 
 ._headerContainer {
