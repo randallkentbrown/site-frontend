@@ -20,7 +20,9 @@
 }
 
 ._headingDate {
-    font-weight: normal;
+    font-weight: normal;    
+    font-size: smaller;
+    color: darkslategray;
 }
 
 /* Header */

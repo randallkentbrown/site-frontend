@@ -97,52 +97,60 @@ const PersonalPage = () => {
 }
 
 /* A heading with a sub-title displaying a provided string as a date. */
-const DatedHeading = ({children, date}) => {
+const DatedHeading = ({children, date, subtext}) => {
     return <h4>
         {children}
         <br/>
-        <span className="_headingDate">Dates: {date}</span>
+        <DateSubtext date={date} subtext={subtext} />
     </h4>;
+};
+
+const DateSubtext = ({date, subtext}) => {
+    return <span className="_headingDate">{subtext ? `${subtext} | ` : ""} dates: {date}</span>;
 };
 
 /* A page detailing my professional experience. */
 const ProfessionalPage = () => {
     return <>
         <div className="divider"/>
-        <h3>Education</h3>
+        <h3>
+            Education
+            <br />
+            <h4><DateSubtext date={<>8/2016 - 5/2021</>} subtext="3.5 gpa" /></h4>
+        </h3>
         <p>
             I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
             I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
         </p>
         <div className="divider"/>
         <h3>Current Role</h3>
-        <DatedHeading date={<>11/2023 - <i>current</i></>}>Blain Supply / Blain's Farm and Fleet</DatedHeading>
+        <DatedHeading date={<>11/2023 - <i>current</i></>} subtext="full-time">Blain Supply / Blain's Farm and Fleet</DatedHeading>
         <p>
             Since November of 2023 I have been a Software Developer in the IT Division of Blain's Farm and Fleet, a consumer-focused regional retailer
             with stores across the Midwest. I contribute full-stack software development with a focus on user-centered design, integration, and agile process management.
         </p>
         <div className="divider"/>
         <h3>Prior Experience</h3>
-        <DatedHeading date="8/2021 - 10/2023">Epic Systems Corp.</DatedHeading>
+        <DatedHeading date="8/2021 - 10/2023" subtext="full-time">Epic Systems Corp. (Full-Time)</DatedHeading>
         <p>
             I spent two intense and rewarding years at Epic Systems in Verona, WI, where I worked in a full-stack development environment.
             I was responsible for maintaining and extending integrated enterprise applications running a React front-end,
             C# / .NET back-end, and a legacy M database.
         </p>
-        <DatedHeading date="8/2020 - 5/2021">Senior Capstone Project - LenelS2 Security Camera Simulator</DatedHeading>
+        <DatedHeading date="8/2020 - 5/2021" subtext="part-time senior capstone project">LenelS2 Security Camera Simulator</DatedHeading>
         <p>
             During my year-long Senior Capstone project at RIT, I led a team of four other student developers in the enhancement of a
             security camera simulator tool. Using a Kanban lifecycle with two-week sprints to maintain accountability and progress,
             we extended a legacy camera simulator system by creating a Python API for the system and deploying the tool in a
             container using Docker. In the end, we were able to exceed client expectations with the delivered product.
         </p>
-        <DatedHeading date="1/2020 - 5/2020">Amplify Education (Co-Op)</DatedHeading>
+        <DatedHeading date="1/2020 - 5/2020" subtext="full-time co-op">Amplify Education</DatedHeading>
         <p>
             At Amplify, I worked as a Test Engineer Co-op, developing automated test cases and performing manual release testing.
             I also assisted developers on my team with the management of AWS resources and occasionally performed minor development
             tasks, such as creating small components and maintaining web services.
         </p>
-        <DatedHeading date="7/2018 - 12/2018">ENSCO Avionics (Co-Op)</DatedHeading>
+        <DatedHeading date="7/2018 - 12/2018" subtext="full-time co-op">ENSCO Avionics</DatedHeading>
         <p>
             While working with ENSCO Avionics as an Assistant Verification Engineer, I worked in a new team to establish a project
             lifecycle for the safety-critical validation and verification of the dashboard controller in
