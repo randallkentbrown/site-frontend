@@ -11,6 +11,7 @@ export default function LightweightSite() {
 
     return <div className="_site">
         <Header />
+        <div className="divider mb-5" />
         <Toolbar setPage={setPageNumber}/>
         <Page page={page}/>
     </div>;
@@ -73,7 +74,8 @@ const Page = (props) => {
   
 const PersonalPage = () => {
     return <>
-        <h3 className="_firstHeading">About Me</h3>
+        <div className="divider"/>
+        <h3>About Me</h3>
         <p>
             Hello, I'm Kent! I'm a software engineer with a passion for education and environmentalism! I currently live in Madison, Wisconsin,
             where I moved after graduating from Rochester Institute of Technology, in Rochester, NY in 2021. I've lived all over the country and
@@ -83,6 +85,7 @@ const PersonalPage = () => {
             I enjoy playing volleyball, skiing, running, and both video games and tabletop games - but most of all, spending time with my beautiful
             girlfriend Carly and my wonderful friends.
         </p>
+        <div className="divider"/>
         <h3>Charlie Brown's Tree Farm</h3>
         <p>
             My family are the proud owners of a beautiful Christmas Tree Farm in Milford, New Jersey, near the Pennsylvania border.
@@ -105,18 +108,20 @@ const DatedHeading = ({children, date}) => {
 /* A page detailing my professional experience. */
 const ProfessionalPage = () => {
     return <>
-        <h3 className="_firstHeading">Education</h3>
+        <div className="divider"/>
+        <h3>Education</h3>
         <p>
             I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
             I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
         </p>
-
-        <h3>Current Engagements</h3>
+        <div className="divider"/>
+        <h3>Current Role</h3>
         <DatedHeading date={<>11/2023 - <i>current</i></>}>Blain Supply / Blain's Farm and Fleet</DatedHeading>
         <p>
             Since November of 2023 I have been a Software Developer in the IT Division of Blain's Farm and Fleet, a consumer-focused regional retailer
             with stores across the Midwest. I contribute full-stack software development with a focus on user-centered design, integration, and agile process management.
         </p>
+        <div className="divider"/>
         <h3>Prior Experience</h3>
         <DatedHeading date="8/2021 - 10/2023">Epic Systems Corp.</DatedHeading>
         <p>
@@ -148,13 +153,17 @@ const ProfessionalPage = () => {
 
 const ContactPage = () => {
     return <>
-        <h3 className="_firstHeading">Get In Touch</h3>
+        <div className="divider"/>
+        <h3>Get In Touch</h3>
         <p>
             If you have a <i>legitimate</i> reason to contact me, please do! Reach out through these official channels:
+            <br />
+            <ul>
+                <li>email: <a href="mailto:randall.k.brown.jr@gmail.com">randall.k.brown.jr@gmail.com</a></li>
+                <li>linkedin: <a href="https://www.linkedin.com/in/randall-kent-brown">www.linkedin.com/in/randall-kent-brown</a></li>
+            </ul>
         </p>
-        email: <a href="mailto:randall.k.brown.jr@gmail.com">randall.k.brown.jr@gmail.com</a>
-        <br />
-        linkedin: <a href="https://www.linkedin.com/in/randall-kent-brown">www.linkedin.com/in/randall-kent-brown</a>
+        <div className="divider"/>
         <h3>Check Out the Site</h3>
         <p>
             If you're curious about the code behind the site, you're in luck: I've made the code open source! Feel free to check it out on GitHub.
