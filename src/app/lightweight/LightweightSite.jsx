@@ -13,6 +13,7 @@ export default function LightweightSite() {
         <Header />
         <div className="divider mb-5" />
         <Toolbar setPage={setPageNumber}/>
+        <div className="divider"/>
         <Page page={page}/>
     </div>;
 };
@@ -74,7 +75,6 @@ const Page = (props) => {
   
 const PersonalPage = () => {
     return <>
-        <div className="divider"/>
         <h3>About Me</h3>
         <p>
             Hello, I'm Kent! I'm a software engineer with a passion for education and environmentalism! I currently live in Madison, Wisconsin,
@@ -112,17 +112,6 @@ const DateSubtext = ({date, subtext}) => {
 /* A page detailing my professional experience. */
 const ProfessionalPage = () => {
     return <>
-        <div className="divider"/>
-        <h3>
-            Education
-            <br />
-            <h4><DateSubtext date={<>8/2016 - 5/2021</>} subtext="3.5 gpa" /></h4>
-        </h3>
-        <p>
-            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
-            I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
-        </p>
-        <div className="divider"/>
         <h3>Current Role</h3>
         <DatedHeading date={<>11/2023 - <i>current</i></>} subtext="full-time">Blain Supply / Blain's Farm and Fleet</DatedHeading>
         <p>
@@ -156,12 +145,21 @@ const ProfessionalPage = () => {
             lifecycle for the safety-critical validation and verification of the dashboard controller in
             Lockheed Martin's Combat Rescue Helicopter. I used VectorCAST to develop over 500 DO-178B compliant test cases.
         </p>
+        <div className="divider" />
+        <h3>
+            Education
+            <br />
+            <h4><DateSubtext date={<>8/2016 - 5/2021</>} subtext="3.5 gpa" /></h4>
+        </h3>
+        <p>
+            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
+            I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
+        </p>
     </>;
 }
 
 const ContactPage = () => {
     return <>
-        <div className="divider"/>
         <h3>Get In Touch</h3>
         <p>
             If you have a <i>legitimate</i> reason to contact me, please do! Reach out through these official channels:
