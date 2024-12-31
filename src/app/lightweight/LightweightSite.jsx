@@ -160,9 +160,11 @@ const ProfessionalPage = () => {
             Rochester Institute of Technology
         </DatedHeading>
         <p>
-            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
-            I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
+            I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b>.
+            I completed my five-year program in <b>May 2021</b> after serving in two internships and designing and implementing a senior capstone project. 
+            I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies.
         </p>
+        <p>The first university in the nation to offer a Software Engineering program. Division I Hockey. Undefeated in Football since 1978. Go Tigers!</p>
         <DatedHeading
             date="9/2012 - 6/2016"
             subtext="high school diploma"
