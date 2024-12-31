@@ -48,6 +48,29 @@ const Toolbar = (props) => {
     </nav>
 };
 
+/* Page Components */
+
+// Header for a larger section of a page.
+const SectionHeader = (props) => {
+
+    const { children } = props;
+    return <h2>{children}</h2>;
+}
+
+// A heading with a sub-title displaying a provided string as a date.
+const DatedHeading = ({children, date, subtext}) => {
+    return <h4>
+        {children}
+        <br/>
+        <DateSubtext date={date} subtext={subtext} />
+    </h4>;
+};
+
+// Displays some dates and optionally, some subtext to the left 
+const DateSubtext = ({date, subtext}) => {
+    return <span className="_headingDate">{subtext ? `${subtext} | ` : ""} dates: {date}</span>;
+};
+
 /* Pages */
 
 const Page = (props) => {
@@ -75,7 +98,7 @@ const Page = (props) => {
   
 const PersonalPage = () => {
     return <>
-        <h3>About Me</h3>
+        <SectionHeader>About Me</SectionHeader>
         <p>
             Hello, I'm Kent! I'm a software engineer with a passion for education and environmentalism! I currently live in Madison, Wisconsin,
             where I moved after graduating from Rochester Institute of Technology, in Rochester, NY in 2021. I've lived all over the country and
@@ -85,8 +108,7 @@ const PersonalPage = () => {
             I enjoy playing volleyball, skiing, running, and both video games and tabletop games - but most of all, spending time with my beautiful
             girlfriend Carly and my wonderful friends.
         </p>
-        <div className="divider"/>
-        <h3>Charlie Brown's Tree Farm</h3>
+        <SectionHeader>Charlie Brown's Christmas Tree Farm</SectionHeader>
         <p>
             My family are the proud owners of a beautiful Christmas Tree Farm in Milford, New Jersey, near the Pennsylvania border.
             If you're ever in the area, or just curious about our business, please feel free to visit our site,
@@ -96,30 +118,15 @@ const PersonalPage = () => {
     </>;
 }
 
-/* A heading with a sub-title displaying a provided string as a date. */
-const DatedHeading = ({children, date, subtext}) => {
-    return <h4>
-        {children}
-        <br/>
-        <DateSubtext date={date} subtext={subtext} />
-    </h4>;
-};
-
-const DateSubtext = ({date, subtext}) => {
-    return <span className="_headingDate">{subtext ? `${subtext} | ` : ""} dates: {date}</span>;
-};
-
-/* A page detailing my professional experience. */
 const ProfessionalPage = () => {
     return <>
-        <h3>Current Role</h3>
+        <SectionHeader>Current Role</SectionHeader>
         <DatedHeading date={<>11/2023 - <i>current</i></>} subtext="full-time">Blain Supply / Blain's Farm and Fleet</DatedHeading>
         <p>
             Since November of 2023 I have been a Software Developer in the IT Division of Blain's Farm and Fleet, a consumer-focused regional retailer
             with stores across the Midwest. I contribute full-stack software development with a focus on user-centered design, integration, and agile process management.
         </p>
-        <div className="divider"/>
-        <h3>Prior Experience</h3>
+        <SectionHeader>Prior Experience</SectionHeader>
         <DatedHeading date="8/2021 - 10/2023" subtext="full-time">Epic Systems Corp. (Full-Time)</DatedHeading>
         <p>
             I spent two intense and rewarding years at Epic Systems in Verona, WI, where I worked in a full-stack development environment.
@@ -145,22 +152,32 @@ const ProfessionalPage = () => {
             lifecycle for the safety-critical validation and verification of the dashboard controller in
             Lockheed Martin's Combat Rescue Helicopter. I used VectorCAST to develop over 500 DO-178B compliant test cases.
         </p>
-        <div className="divider" />
-        <h3>
-            Education
-            <br />
-            <h4><DateSubtext date={<>8/2016 - 5/2021</>} subtext="3.5 gpa" /></h4>
-        </h3>
+        <SectionHeader>Education</SectionHeader>
+        <DatedHeading
+            date="8/2016 - 5/2021"
+            subtext="bachelor's degree + co-op education"
+        >
+            Rochester Institute of Technology
+        </DatedHeading>
         <p>
             I hold a Bachelor's of Science, <i>cum laude</i>, in <b>Software Engineering</b> from <b>Rochester Institute of Technology</b> (2021).
             I received a minor in Computer Engineering and I completed an Immersion in Environmental Studies. Go Tigers!
+        </p>
+        <DatedHeading
+            date="9/2012 - 6/2016"
+            subtext="high school diploma"
+        >
+            Delaware Valley Regional High School
+        </DatedHeading>
+        <p>
+            It's not the size of the dog in the fight; it's the size of the fight in the dog.
         </p>
     </>;
 }
 
 const ContactPage = () => {
     return <>
-        <h3>Get In Touch</h3>
+        <SectionHeader>Get In Touch</SectionHeader>
         <p>
             If you have a <i>legitimate</i> reason to contact me, please do! Reach out through these official channels:
             <br />
@@ -169,8 +186,7 @@ const ContactPage = () => {
                 <li>linkedin: <a href="https://www.linkedin.com/in/randall-kent-brown">www.linkedin.com/in/randall-kent-brown</a></li>
             </ul>
         </p>
-        <div className="divider"/>
-        <h3>Check Out the Site</h3>
+        <SectionHeader>Check Out the Site</SectionHeader>
         <p>
             If you're curious about the code behind the site, you're in luck: I've made the code open source! Feel free to check it out on GitHub.
         </p>
