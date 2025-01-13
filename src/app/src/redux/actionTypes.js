@@ -1,1 +1,0 @@
-export const SET_RESUME_URI = "SET_RESUME_URI";
